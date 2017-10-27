@@ -1,6 +1,6 @@
 var MarketingPlanningMenu = require('../PageObjects/marketing-planning-menu.page1');
 var MarketingTreeOfElements = require('../PageObjects/marketing-planning-treeOfElements.page2');
-var MarketingEastLayoutForm = require('../PageObjects/marketing-planning-eastLayoutForm.page3');
+var MarketingEastLayoutForm = require('../PageObjects/marketing-planning-eastLayout-publikationspflege.page3');
 var data = require('../data/data.json');
 
 describe('Interaction with catalog-planning', function () {
@@ -32,7 +32,7 @@ describe('Interaction with catalog-planning', function () {
         marketingEastForm.changeDataWerbeplanung(data.nummer, data.et, data.kommentar);
         expect(marketingEastForm.nummerField.getAttribute('value')).toEqual(data.nummer);
         expect(marketingEastForm.typField.getAttribute('value')).toEqual('21');
-        expect(marketingEastForm.etField.getAttribute('value')).toEqual('27.02.2015');
+        expect(marketingEastForm.etField.getAttribute('value')).toEqual(data.et);
         expect(marketingEastForm.preiseField.getAttribute('value')).toEqual('1');
         expect(marketingEastForm.landField.getAttribute('value')).toEqual('166');
         expect(marketingEastForm.kommentarField.getAttribute('value')).toEqual(data.kommentar);
