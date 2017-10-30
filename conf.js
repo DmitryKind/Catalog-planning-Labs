@@ -2,9 +2,9 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
    // specs: './specs/marketing-planning-lab2.spec.js',
     suites: {
-        allSpecs: ['specs/marketing-planning-lab1.spec.js',
-            'specs/marketing-planning-lab2.spec.js']
+        allSpecs: 'specs/**/*.spec.js'
     },
+
     multiCapabilities: [{
         'browserName': 'chrome'
     }],
@@ -16,6 +16,7 @@ exports.config = {
     onPrepare: function () {
         require('jasmine2-custom-message');
         browser.driver.manage().window().maximize();
+        global.catalogPlannerUrl = 'http://vtest16:8093/catalog-planning/#/productionsEditor';
         var JasmineConsoleReporter = require('jasmine-console-reporter');
         var reporter = new JasmineConsoleReporter({
             colors: true,           // (0|false)|(1|true)|2
