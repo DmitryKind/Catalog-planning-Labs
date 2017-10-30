@@ -46,4 +46,4 @@ function MarketingEastLayoutForm() {
         anotherlandField.click();
         kommentarField.sendKeys(kommentar);
     }
-};
+}
