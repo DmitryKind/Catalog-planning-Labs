@@ -1,5 +1,16 @@
 {
-  "nummer" : "6666",
-  "et" : "27.02.2015",
-  "kommentar" : "Privet Mir"
+  "Nummer": "6556",
+  "Et": "02.03.2017",
+  "newNummer": "6666",
+  "newEt": "27.02.2015",
+  "kommentar": "Privet Mir",
+  "typProspekt": "1",
+  "preisSchwarzpreis": "0",
+  "typInszenierungspunkt": "21",
+  "preiseReduziert": "1",
+  "landPolen": "166",
+  "Name": "34",
+  "Saisontyp": "Herbst/Winter 2012/2013",
+  "Startdatum": "01.09.2012",
+  "Enddatum": "28.02.2013"
 }

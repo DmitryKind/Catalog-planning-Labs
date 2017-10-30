@@ -18,12 +18,12 @@ describe('Interaction with catalog-planning', function () {
         expect(marketingMenu.saisons.isDisplayed()).toBe(true, 'Menu punct is not visible');
         expect(marketingMenu.saisonsFormText.getText()).toEqual('Saisons');
         expect(marketingMenu.saisonsForm.isDisplayed()).toBe(true, 'Form is not visible');
-});
+    });
     it('Выбрать в списке сезон с номером 34.', function () {
         marketingTreeOfElements.saisons34.click();
-        expect(MarketingEastFormSaisons.saisonsNameField.getAttribute('value')).toEqual('34');
-        expect(MarketingEastFormSaisons.saisonTyp.getAttribute('value')).toEqual('Herbst/Winter 2012/2013');
-        expect(MarketingEastFormSaisons.saisonStartdatum.getAttribute('value')).toEqual('01.09.2012');
-        expect(MarketingEastFormSaisons.saisonEnddatum.getAttribute('value')).toEqual('28.02.2013');
+        expect(MarketingEastFormSaisons.fieldSaisonsName.getAttribute('value')).toEqual(data.Name);
+        expect(MarketingEastFormSaisons.fieldSaisonTyp.getAttribute('value')).toEqual(data.Saisontyp);
+        expect(MarketingEastFormSaisons.fieldSaisonStartdatum.getAttribute('value')).toEqual(data.Startdatum);
+        expect(MarketingEastFormSaisons.fieldSaisonEnddatum.getAttribute('value')).toEqual(data.Enddatum);
     });
 });

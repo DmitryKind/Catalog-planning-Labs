@@ -14,9 +14,9 @@ function MarketingTreeOfElements () {
 
     that.treeElementsClick = function () {
         browser.actions().doubleClick(unit40HerbstWinter).perform();
-        browser.sleep(1000);
+        browser.sleep(2000);
         browser.actions().doubleClick(unitProspekt).perform();
-        browser.sleep(1000);
+        browser.sleep(2000);
         browser.actions().doubleClick(unit6556Schwarzpreis).perform();
     }
 
