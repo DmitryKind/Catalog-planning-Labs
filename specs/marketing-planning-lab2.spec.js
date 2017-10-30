@@ -9,10 +9,10 @@ describe('Interaction with catalog-planning', function () {
     var MarketingEastFormSaisons = new MarketingEastLayoutFormSaisons();
 
     beforeAll(function () {
-        browser.get('http://vtest16:8093/catalog-planning/#/productionsEditor')
+        browser.get(catalogPlannerUrl)
     });
 
-    it('Выбрать пункт меню STAMMDATEN saisons и перейти а форму.', function () {
+    it('Выбрать пункт меню STAMMDATEN saisons и перейти на форму.', function () {
         marketingMenu.menuStammdaten.click();
         marketingMenu.saisons.click();
         expect(marketingMenu.saisons.isDisplayed()).toBe(true, 'Menu punct is not visible');
@@ -21,9 +21,9 @@ describe('Interaction with catalog-planning', function () {
     });
     it('Выбрать в списке сезон с номером 34.', function () {
         marketingTreeOfElements.saisons34.click();
-        expect(MarketingEastFormSaisons.fieldSaisonsName.getAttribute('value')).toEqual(data.Name);
-        expect(MarketingEastFormSaisons.fieldSaisonTyp.getAttribute('value')).toEqual(data.Saisontyp);
-        expect(MarketingEastFormSaisons.fieldSaisonStartdatum.getAttribute('value')).toEqual(data.Startdatum);
-        expect(MarketingEastFormSaisons.fieldSaisonEnddatum.getAttribute('value')).toEqual(data.Enddatum);
+        expect(MarketingEastFormSaisons.saisonsNameField.getAttribute('value')).toEqual(data.Name);
+        expect(MarketingEastFormSaisons.saisonTypField.getAttribute('value')).toEqual(data.Saisontyp);
+        expect(MarketingEastFormSaisons.saisonStartdatumField.getAttribute('value')).toEqual(data.Startdatum);
+        expect(MarketingEastFormSaisons.saisonEnddatumField.getAttribute('value')).toEqual(data.Enddatum);
     });
 });
