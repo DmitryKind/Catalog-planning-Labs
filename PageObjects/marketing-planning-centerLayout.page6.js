@@ -15,13 +15,18 @@ function MarketingCentrLayoutForm() {
     that.deleteBtn = deleteBtn;
     that.confirmBtn = confirmBtn;
 
-    that.addNewElementTestCreate = function (modalName) {
-        addBtn.click();
-        nameFieldInDialogWindow.sendKeys(modalName);
-        okBtn.click();
-    }
+    that.addNewElementTestCreate = function (modalNameField) {
+        return addBtn.click().
+        then(function () {
+            return nameFieldInDialogWindow.sendKeys(modalNameField);}).
+        then(function () {
+            return okBtn.click();
+        })
+    };
     that.deleteElementTestEdit = function () {
-        deleteBtn.click();
-        confirmBtn.click();
-    }
+        return deleteBtn.click().
+        then(function () {
+            return confirmBtn.click();
+        })
+    };
 }

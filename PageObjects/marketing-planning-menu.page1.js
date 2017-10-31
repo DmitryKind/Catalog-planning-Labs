@@ -8,7 +8,9 @@ function MarketingPlanningMenu() {
         menuStammdaten = element(by.cssContainingText('.ng-binding', 'STAMMDATEN')),
         saisons = element(by.css('a[href="/saisonsVerwaltung"]')),
         saisonsForm = element(by.cssContainingText('.ng-binding', 'Saisons')),
-        saisonsFormText = element(by.className('ng-binding'));
+        saisonsFormText = element(by.className('ng-binding')),
+        vorteile = element(by.css('a[href="/Vorteile"]')),
+        vorteileFormText = element(by.id('header'));
 
     that.menuPublikationspflege = menuPublikationspflege;
     that.publikationspflegeForm = publikationspflegeForm;
@@ -17,4 +19,16 @@ function MarketingPlanningMenu() {
     that.saisons = saisons;
     that.saisonsForm = saisonsForm;
     that.saisonsFormText = saisonsFormText;
+    that.vorteile = vorteile;
+    that.vorteileFormText = vorteileFormText;
+
+    that.clickMenuVorteile = function () {
+        var EC = protractor.ExpectedConditions;
+        return menuStammdaten.click().
+        then(function () {
+            return browser.wait(EC.visibilityOf(vorteile));}).
+        then(function () {
+            return vorteile.click();
+        })
+    };
 }

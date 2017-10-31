@@ -1,6 +1,6 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-   // specs: './specs/marketing-planning-lab2.spec.js',
+    //specs: './specs/marketing-planning-lab3.spec.js',
     suites: {
         allSpecs: 'specs/**/*.spec.js'
     },

@@ -9,7 +9,7 @@ describe('Interaction with catalog-planning', function () {
     var marketingEastForm = new MarketingEastLayoutForm();
 
     beforeAll(function () {
-        browser.get('http://vtest16:8093/catalog-planning/#/productionsEditor')
+        browser.get(catalogPlannerUrl)
     });
 
     it('Выбрать пункт меню Publikationspflege и перейти а форму.', function () {

@@ -8,11 +8,13 @@ function MarketingEastLayoutFormVorteile() {
 
     that.nameFieldVr2 = nameFieldVr2;
     that.nameFieldTestCreate = nameFieldTestCreate;
-    that.saveButtom = saveButton;
 
     that.editNameFieldCreate = function (editName) {
-        nameFieldTestCreate.clear();
-        nameFieldTestCreate.sendKeys(editName);
-        saveButton.click();
-    }
+        return nameFieldTestCreate.clear().
+        then(function () {
+            return nameFieldTestCreate.sendKeys(editName);}).
+        then(function () {
+            return saveButton.click();
+        })
+    };
 }

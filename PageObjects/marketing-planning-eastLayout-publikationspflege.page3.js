@@ -34,16 +34,26 @@ function MarketingEastLayoutForm() {
     that.inscription = inscription;
 
     that.changeDataWerbeplanung = function (nummer, et, kommentar) {
-        nummerField.clear();
-        nummerField.sendKeys(nummer);
-        typField.click();
-        anothertypField.click();
-        etField.clear();
-        etField.sendKeys(et);
-        preiseField.click();
-        anotherPreiseField.click();
-        landField.click();
-        anotherlandField.click();
-        kommentarField.sendKeys(kommentar);
-    }
+    return nummerField.clear().
+    then(function () {
+        return nummerField.sendKeys(nummer);}).
+    then(function () {
+            return typField.click();}).
+    then(function () {
+        return anothertypField.click();}).
+    then(function () {
+        return etField.clear();}).
+    then(function () {
+        return etField.sendKeys(et);}).
+    then(function () {
+       return preiseField.click();}).
+    then(function () {
+        return anotherPreiseField.click();}).
+    then(function () {
+        return landField.click();}).
+    then(function () {
+        return anotherlandField.click();}).
+    then(function () {
+        return kommentarField.sendKeys(kommentar);})
+    };
 }

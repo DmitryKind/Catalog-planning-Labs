@@ -15,9 +15,7 @@ describe('Interaction with catalog-planning', function () {
     });
 
     it('Выбрать пункт меню STAMMDATEN vorteile и перейти а форму.', function () {
-        marketingMenu.menuStammdaten.click();
-        browser.sleep(1000);
-        marketingMenu.vorteile.click();
+        marketingMenu.clickMenuVorteile();
         expect(marketingMenu.vorteile.isDisplayed()).toBe(true, 'Menu punct is not visible');
         expect(marketingMenu.vorteileFormText.getText()).toEqual('PuC.Marketing Vorteile');
     });
@@ -38,7 +36,7 @@ describe('Interaction with catalog-planning', function () {
         marketingEastFormVorteile.editNameFieldCreate(data.editName);
         expect(marketingTreeOfElements.newName.getText()).toEqual(data.editName);
     });
-    
+
     it('Выделить строку с созданным элементом "Test_edit.Нажать кнопку удаления элемента', function () {
         marketingTreeOfElements.vorteileTestEdit.click();
         marketingCentrLayoutForm.deleteElementTestEdit();
