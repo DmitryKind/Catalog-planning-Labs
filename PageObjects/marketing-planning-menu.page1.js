@@ -24,11 +24,22 @@ function MarketingPlanningMenu() {
 
     that.clickMenuVorteile = function () {
         var EC = protractor.ExpectedConditions;
-        return menuStammdaten.click().
-        then(function () {
-            return browser.wait(EC.visibilityOf(vorteile));}).
-        then(function () {
-            return vorteile.click();
-        })
+        return menuStammdaten.click()
+            .then(function () {
+                return browser.wait(EC.visibilityOf(vorteile));
+            })
+            .then(function () {
+                return vorteile.click();
+            })
+    };
+    that.clickMenuSaisons = function () {
+        var EC = protractor.ExpectedConditions;
+        return menuStammdaten.click()
+            .then(function () {
+                return browser.wait(EC.visibilityOf(saisons));
+            })
+            .then(function () {
+                return saisons.click();
+            })
     };
 }

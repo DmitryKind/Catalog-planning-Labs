@@ -2,11 +2,11 @@ module.exports = MarketingEastLayoutForm;
 
 function MarketingEastLayoutForm() {
     var that = this;
-   /* var typeMap = {
+    /* var typeMap = {
 
-        "Prospekt": "1"
-    }
-    that.typeMap = typeMap;*/
+     "Prospekt": "1"
+     }
+     that.typeMap = typeMap;*/
     var publikationspflegeForm = element(by.id('eastLayout')),
         nummerField = $("[placeholder ='Nummer']"),
         typField = $$('select', 'Prospekt').get(1),
@@ -34,26 +34,36 @@ function MarketingEastLayoutForm() {
     that.inscription = inscription;
 
     that.changeDataWerbeplanung = function (nummer, et, kommentar) {
-    return nummerField.clear().
-    then(function () {
-        return nummerField.sendKeys(nummer);}).
-    then(function () {
-            return typField.click();}).
-    then(function () {
-        return anothertypField.click();}).
-    then(function () {
-        return etField.clear();}).
-    then(function () {
-        return etField.sendKeys(et);}).
-    then(function () {
-       return preiseField.click();}).
-    then(function () {
-        return anotherPreiseField.click();}).
-    then(function () {
-        return landField.click();}).
-    then(function () {
-        return anotherlandField.click();}).
-    then(function () {
-        return kommentarField.sendKeys(kommentar);})
+        return nummerField.clear()
+            .then(function () {
+                return nummerField.sendKeys(nummer);
+            })
+            .then(function () {
+                return typField.click();
+            })
+            .then(function () {
+                return anothertypField.click();
+            })
+            .then(function () {
+                return etField.clear();
+            })
+            .then(function () {
+                return etField.sendKeys(et);
+            })
+            .then(function () {
+                return preiseField.click();
+            })
+            .then(function () {
+                return anotherPreiseField.click();
+            })
+            .then(function () {
+                return landField.click();
+            })
+            .then(function () {
+                return anotherlandField.click();
+            })
+            .then(function () {
+                return kommentarField.sendKeys(kommentar);
+            })
     };
 }

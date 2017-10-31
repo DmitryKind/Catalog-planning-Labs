@@ -10,11 +10,12 @@ function MarketingEastLayoutFormVorteile() {
     that.nameFieldTestCreate = nameFieldTestCreate;
 
     that.editNameFieldCreate = function (editName) {
-        return nameFieldTestCreate.clear().
-        then(function () {
-            return nameFieldTestCreate.sendKeys(editName);}).
-        then(function () {
-            return saveButton.click();
-        })
+        return nameFieldTestCreate.clear()
+            .then(function () {
+                return nameFieldTestCreate.sendKeys(editName);
+            })
+            .then(function () {
+                return saveButton.click();
+            })
     };
 }

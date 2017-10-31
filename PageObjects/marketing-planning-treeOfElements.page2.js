@@ -1,6 +1,6 @@
 module.exports = MarketingTreeOfElements;
 
-function MarketingTreeOfElements () {
+function MarketingTreeOfElements() {
     var that = this;
     var unit40HerbstWinter = element(by.cssContainingText('.aciTreeText', '40, Herbst/Winter 2015/2016')),
         unitProspekt = element(by.cssContainingText('.aciTreeText', 'Prospekt')),
@@ -22,14 +22,18 @@ function MarketingTreeOfElements () {
 
     that.treeElementsClick = function () {
         var EC = protractor.ExpectedConditions;
-       return browser.actions().doubleClick(unit40HerbstWinter).perform().
-       then(function () {
-           return browser.wait(EC.visibilityOf(unitProspekt));}).
-       then(function () {
-           return browser.actions().doubleClick(unitProspekt).perform();}).
-       then(function () {
-           browser.wait(EC.visibilityOf(unit6556Schwarzpreis));}).
-       then(function () {
-           browser.actions().doubleClick(unit6556Schwarzpreis).perform();})
+        return browser.actions().doubleClick(unit40HerbstWinter).perform()
+            .then(function () {
+                return browser.wait(EC.visibilityOf(unitProspekt));
+            })
+            .then(function () {
+                return browser.actions().doubleClick(unitProspekt).perform();
+            })
+            .then(function () {
+                browser.wait(EC.visibilityOf(unit6556Schwarzpreis));
+            })
+            .then(function () {
+                browser.actions().doubleClick(unit6556Schwarzpreis).perform();
+            })
     };
- }
+}

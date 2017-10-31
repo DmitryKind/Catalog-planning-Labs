@@ -16,17 +16,18 @@ function MarketingCentrLayoutForm() {
     that.confirmBtn = confirmBtn;
 
     that.addNewElementTestCreate = function (modalNameField) {
-        return addBtn.click().
-        then(function () {
-            return nameFieldInDialogWindow.sendKeys(modalNameField);}).
-        then(function () {
-            return okBtn.click();
-        })
+        return addBtn.click()
+            .then(function () {
+                return nameFieldInDialogWindow.sendKeys(modalNameField);
+            })
+            .then(function () {
+                return okBtn.click();
+            })
     };
     that.deleteElementTestEdit = function () {
-        return deleteBtn.click().
-        then(function () {
-            return confirmBtn.click();
-        })
+        return deleteBtn.click()
+            .then(function () {
+                return confirmBtn.click();
+            })
     };
 }

@@ -15,6 +15,7 @@ describe('Interaction with catalog-planning', function () {
     });
 
     it('Выбрать пункт меню STAMMDATEN vorteile и перейти а форму.', function () {
+        //marketingMenu.menuStammdaten.click();
         marketingMenu.clickMenuVorteile();
         expect(marketingMenu.vorteile.isDisplayed()).toBe(true, 'Menu punct is not visible');
         expect(marketingMenu.vorteileFormText.getText()).toEqual('PuC.Marketing Vorteile');

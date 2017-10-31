@@ -13,8 +13,8 @@ describe('Interaction with catalog-planning', function () {
     });
 
     it('Выбрать пункт меню STAMMDATEN saisons и перейти на форму.', function () {
-        marketingMenu.menuStammdaten.click();
-        marketingMenu.saisons.click();
+       // marketingMenu.menuStammdaten.click();
+        marketingMenu.clickMenuSaisons();
         expect(marketingMenu.saisons.isDisplayed()).toBe(true, 'Menu punct is not visible');
         expect(marketingMenu.saisonsFormText.getText()).toEqual('Saisons');
         expect(marketingMenu.saisonsForm.isDisplayed()).toBe(true, 'Form is not visible');
