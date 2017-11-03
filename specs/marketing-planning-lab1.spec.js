@@ -13,15 +13,15 @@ describe('Interaction with catalog-planning', function () {
     });
 
     it('Выбрать пункт меню Publikationspflege и перейти а форму.', function () {
-        marketingMenu.menuPublikationspflege.click();
-        expect(marketingMenu.publikationspflegeForm.isDisplayed()).toBe(true, 'Menu punct is not visible');
-        expect(marketingMenu.publikationspflegeFormText.getText()).toEqual('Publikationspflege');
-        expect(marketingEastForm.publikationspflegeForm.isDisplayed()).toBe(true, 'Form is not visible');
+        marketingMenu.publikationspflegePunkt.click();
+        expect(marketingMenu.formText.getText()).toEqual(data.Publikationspflege);
     });
 
     it('Выбрать в дереве элементов "40, Herbst/Winter 2015/2016" -> Prospekt -> ' +
-        '"6556 Schwarzpreis ET: 02.03.2017".',function () {
-        marketingTreeOfElements.treeElementsClick();
+        '"6556 Schwarzpreis ET: 02.03.2017".', function () {
+        marketingTreeOfElements.treeElementsClick(marketingTreeOfElements.unit40HerbstWinter
+            , marketingTreeOfElements.unitProspekt
+            , marketingTreeOfElements.unit6556Schwarzpreis);
         expect(marketingEastForm.nummerField.getAttribute('value')).toEqual(data.Nummer);
         expect(marketingEastForm.typField.getAttribute('value')).toEqual(data.typProspekt);
         expect(marketingEastForm.etField.getAttribute('value')).toEqual(data.Et);

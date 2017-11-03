@@ -15,10 +15,8 @@ describe('Interaction with catalog-planning', function () {
     });
 
     it('Выбрать пункт меню STAMMDATEN vorteile и перейти а форму.', function () {
-        //marketingMenu.menuStammdaten.click();
-        marketingMenu.clickMenuVorteile();
-        expect(marketingMenu.vorteile.isDisplayed()).toBe(true, 'Menu punct is not visible');
-        expect(marketingMenu.vorteileFormText.getText()).toEqual('PuC.Marketing Vorteile');
+        marketingMenu.clickMenu(marketingMenu.menuStammdaten,marketingMenu.vorteilePunkt);
+        expect(marketingMenu.formText.getText()).toEqual(data.Vorteile);
     });
 
     it('Выбрать в списке строку с названием VR_2.', function () {
@@ -40,7 +38,8 @@ describe('Interaction with catalog-planning', function () {
 
     it('Выделить строку с созданным элементом "Test_edit.Нажать кнопку удаления элемента', function () {
         marketingTreeOfElements.vorteileTestEdit.click();
-        marketingCentrLayoutForm.deleteElementTestEdit();
+        marketingCentrLayoutForm.deleteBtn.click();
+        marketingCentrLayoutForm.confirmBtn.click();
         expect(marketingCentrLayoutForm.deleteBtn.isDisplayed()).toBe(true);
         expect(marketingTreeOfElements.vorteileTestEdit.getText()).not.toEqual(data.modalNameField);
     });

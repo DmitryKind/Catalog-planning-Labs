@@ -2,13 +2,8 @@ module.exports = MarketingEastLayoutForm;
 
 function MarketingEastLayoutForm() {
     var that = this;
-    /* var typeMap = {
 
-     "Prospekt": "1"
-     }
-     that.typeMap = typeMap;*/
-    var publikationspflegeForm = element(by.id('eastLayout')),
-        nummerField = $("[placeholder ='Nummer']"),
+    var nummerField = $("[placeholder ='Nummer']"),
         typField = $$('select', 'Prospekt').get(1),
         etField = $$("[placeholder='ET']").get(1),
         preiseField = $$('select', 'Schwarzpreis').get(2),
@@ -20,7 +15,6 @@ function MarketingEastLayoutForm() {
         buttonUndo = element(by.className('fa fa-undo')),
         inscription = element.all(by.className('cp-text-color')).first();
 
-    that.publikationspflegeForm = publikationspflegeForm;
     that.nummerField = nummerField;
     that.typField = typField;
     that.etField = etField;

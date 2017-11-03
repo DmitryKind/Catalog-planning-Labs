@@ -2,44 +2,40 @@ module.exports = MarketingPlanningMenu;
 
 function MarketingPlanningMenu() {
     var that = this;
-    var menuPublikationspflege = element(by.css('a[href="/productionsEditor"]')),
-        publikationspflegeForm = element(by.cssContainingText('.ng-binding', 'Publikationspflege')),
-        publikationspflegeFormText = element(by.className('ng-binding')),
-        menuStammdaten = element(by.cssContainingText('.ng-binding', 'STAMMDATEN')),
-        saisons = element(by.css('a[href="/saisonsVerwaltung"]')),
-        saisonsForm = element(by.cssContainingText('.ng-binding', 'Saisons')),
-        saisonsFormText = element(by.className('ng-binding')),
-        vorteile = element(by.css('a[href="/Vorteile"]')),
-        vorteileFormText = element(by.id('header'));
 
-    that.menuPublikationspflege = menuPublikationspflege;
-    that.publikationspflegeForm = publikationspflegeForm;
-    that.publikationspflegeFormText = publikationspflegeFormText;
+    var headMenu = '.text-justify',
+        menuEinkauf = element(by.cssContainingText(headMenu, 'EINKAUF')),
+        menuStammdaten = element(by.cssContainingText(headMenu, 'STAMMDATEN'));
+
+    var menuInsideHeadMenu = '.list-group-item',
+        publikationspflegePunkt = element(by.cssContainingText(menuInsideHeadMenu, 'Publikationspflege')),
+        saisonsPunkt = element(by.cssContainingText(menuInsideHeadMenu, 'Saisons')),
+        vorteilePunkt = element(by.cssContainingText(menuInsideHeadMenu, 'Vorteile')),
+        seitenplanungPunkt = element(by.cssContainingText(menuInsideHeadMenu, 'Seitenplanung')),
+        artikelzuordnungPunkt = element(by.cssContainingText(menuInsideHeadMenu, 'Artikelzuordnung'));
+
+    var formText = element(by.id('header'));
+
+    that.publikationspflegePunkt = publikationspflegePunkt;
     that.menuStammdaten = menuStammdaten;
-    that.saisons = saisons;
-    that.saisonsForm = saisonsForm;
-    that.saisonsFormText = saisonsFormText;
-    that.vorteile = vorteile;
-    that.vorteileFormText = vorteileFormText;
+    that.menuEinkauf = menuEinkauf;
+    that.saisonsPunkt = saisonsPunkt;
+    that.vorteilePunkt = vorteilePunkt;
+    that.seitenplanungPunkt = seitenplanungPunkt;
+    that.artikelzuordnungPunkt = artikelzuordnungPunkt;
+    that.formText = formText;
 
-    that.clickMenuVorteile = function () {
+    that.clickMenu = function (menu, punktMenu) {
         var EC = protractor.ExpectedConditions;
-        return menuStammdaten.click()
+        return browser.wait(EC.visibilityOf(menu))
             .then(function () {
-                return browser.wait(EC.visibilityOf(vorteile));
+                return menu.click();
             })
             .then(function () {
-                return vorteile.click();
-            })
-    };
-    that.clickMenuSaisons = function () {
-        var EC = protractor.ExpectedConditions;
-        return menuStammdaten.click()
-            .then(function () {
-                return browser.wait(EC.visibilityOf(saisons));
+                return browser.wait(EC.visibilityOf(punktMenu));
             })
             .then(function () {
-                return saisons.click();
+                return punktMenu.click();
             })
     };
 }

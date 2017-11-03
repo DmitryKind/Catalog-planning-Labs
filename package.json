@@ -4,7 +4,7 @@
   "private": true,
   "author": "Dmitry Dobroselskiy",
   "dependencies": {
-    "protractor": "^5.1.2",
+    "protractor": "^5.2.0",
     "jasmine": "^2.6.0",
     "jasmine-console-reporter": "1.2.7",
     "jasmine-spec-reporter": "4.1.1",

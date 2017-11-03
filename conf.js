@@ -1,10 +1,18 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    //specs: './specs/marketing-planning-lab3.spec.js',
-    suites: {
-        allSpecs: 'specs/**/*.spec.js'
-    },
+    //specs: './specs/marketing-planning-lab5.spec.js',
+    //suites: {
+    //allSpecs: 'specs/**/*.spec.js'
+    //},
 
+    specs: [
+        './specs/marketing-planning-lab1.spec.js',
+        './specs/marketing-planning-lab2.spec.js',
+        './specs/marketing-planning-lab3.spec.js',
+        './specs/marketing-planning-lab4.spec.js',
+        './specs/marketing-planning-lab5.spec.js',
+        './specs/marketing-planning-lab6.spec.js'
+        ],
     multiCapabilities: [{
         'browserName': 'chrome'
     }],
@@ -14,9 +22,10 @@ exports.config = {
     },
     allScriptsTimeout: 60000,
     onPrepare: function () {
-        require('jasmine2-custom-message');
+        //require('jasmine2-custom-message');
         browser.driver.manage().window().maximize();
         global.catalogPlannerUrl = 'http://vtest16:8093/catalog-planning/#/productionsEditor';
+        global.newNumber = Math.floor(1000 + Math.random() * 9000).toString();
         var JasmineConsoleReporter = require('jasmine-console-reporter');
         var reporter = new JasmineConsoleReporter({
             colors: true,           // (0|false)|(1|true)|2
