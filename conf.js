@@ -1,18 +1,10 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    //specs: './specs/marketing-planning-lab5.spec.js',
+    specs: ['./specs/test-spec.js'],
     //suites: {
     //allSpecs: 'specs/**/*.spec.js'
     //},
 
-    specs: [
-        './specs/marketing-planning-lab1.spec.js',
-        './specs/marketing-planning-lab2.spec.js',
-        './specs/marketing-planning-lab3.spec.js',
-        './specs/marketing-planning-lab4.spec.js',
-        './specs/marketing-planning-lab5.spec.js',
-        './specs/marketing-planning-lab6.spec.js'
-        ],
     multiCapabilities: [{
         'browserName': 'chrome'
     }],
